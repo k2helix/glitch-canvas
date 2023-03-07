@@ -2,7 +2,7 @@
 var fs = require('fs');
 var assert = require('assert');
 var stream = require('stream');
-var { createCanvas, Image, PNGStream, JPEGStream } = require('canvas');
+var { createCanvas, Image } = require('@napi-rs/canvas');
 var expect = require('expect.js');
 
 // var Image = Canvas.Image;
@@ -336,7 +336,7 @@ describe('node tests for glitch-canvas', function () {
 						.fromBuffer(buffer)
 						.toJPGStream()
 						.then(function (jpgStream) {
-							expect(jpgStream instanceof JPEGStream).to.be(true);
+							expect(jpgStream instanceof Buffer).to.be(true);
 							done();
 						}, done);
 				});
@@ -374,7 +374,7 @@ describe('node tests for glitch-canvas', function () {
 						.fromBuffer(buffer)
 						.toPNGStream()
 						.then(function (pngStream) {
-							expect(pngStream instanceof PNGStream).to.be(true);
+							expect(pngStream instanceof Buffer).to.be(true);
 							done();
 						}, done);
 				});

@@ -40,9 +40,6 @@
 		"url": "https://github.com/snorpey/glitch-canvas/issues"
 	},
 	"homepage": "https://github.com/snorpey/glitch-canvas#readme",
-	"dependencies": {
-		"canvas": "^2.7.0"
-	},
 	"devDependencies": {
 		"@rollup/plugin-buble": "^0.21.3",
 		"acorn": "^7.1.1",
@@ -62,5 +59,8 @@
 		"rollup-plugin-replace": "^2.2.0",
 		"uglify-es": "^3.3.9",
 		"uglify-js": "^3.9.1"
+	},
+	"dependencies": {
+		"@napi-rs/canvas": "^0.1.37"
 	}
 }

@@ -1,4 +1,4 @@
-const { createCanvas, Image } = require('canvas');
+const { createCanvas, Image } = require('@napi-rs/canvas');
 
 class Canvas {
 	constructor(width = 300, height = 150) {
@@ -25,15 +25,15 @@ class Canvas {
 	}
 
 	pngStream(params) {
-		return this.canvasEl.createPNGStream(params);
-	}
-
-	jpgStream(params) {
-		return this.canvasEl.createJPEGStream(params);
+		return this.canvasEl.toBuffer('image/png');
 	}
 
 	jpegStream(params) {
-		return this.canvasEl.createJPEGStream(params);
+		return this.canvasEl.toBuffer('image/jpeg');
+	}
+
+	jpegStream(params) {
+		return this.canvasEl.toBuffer('image/jpeg');
 	}
 
 	get width() {

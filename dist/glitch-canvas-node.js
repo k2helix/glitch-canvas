@@ -63,7 +63,7 @@
 		return params;
 	}
 
-	var ref = require('canvas');
+	var ref = require('@napi-rs/canvas');
 	var createCanvas = ref.createCanvas;
 	var Image$3 = ref.Image;
 
@@ -96,15 +96,15 @@
 	};
 
 	Canvas.prototype.pngStream = function pngStream (params) {
-		return this.canvasEl.createPNGStream(params);
-	};
-
-	Canvas.prototype.jpgStream = function jpgStream (params) {
-		return this.canvasEl.createJPEGStream(params);
+		return this.canvasEl.toBuffer('image/png');
 	};
 
 	Canvas.prototype.jpegStream = function jpegStream (params) {
-		return this.canvasEl.createJPEGStream(params);
+		return this.canvasEl.toBuffer('image/jpeg');
+	};
+
+	Canvas.prototype.jpegStream = function jpegStream (params) {
+		return this.canvasEl.toBuffer('image/jpeg');
 	};
 
 	prototypeAccessors.width.get = function () {
